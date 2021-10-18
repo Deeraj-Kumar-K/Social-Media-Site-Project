@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'accounts'
+    'bootstrap3',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -120,7 +121,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIR = Path.joinpath(BASE_DIR,"static")
+#STATICFILES_DIR = [Path.joinpath(BASE_DIR,"static")]
+STATIC_ROOT = Path.joinpath(BASE_DIR,"static")
+
+LOGIN_REDIRECT_URL = 'welcome'
+LOGOUT_REDIRECT_URL = 'thanks'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
