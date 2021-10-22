@@ -1,5 +1,19 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Welcome. You are now logged in!</h1>
+
+<div class="container">
+  <h1>Welcome to Star Tech!</h1>
+  <h2>The best community for all things on latest technology.!</h2>
+
+  {%if user.is_authenticated %}
+    <br>
+    <h2>You are now logged in!</h2>
+    <h2><a href="{% url 'groups:all'%}">Go to Groups</a></h2>
+  {%else%}
+    <h2>Login or Sign-up for free to get started!</h2>
+  {% endif %}
+
+</div>
+
 {% endblock %}
